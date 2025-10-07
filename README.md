@@ -1,7 +1,34 @@
 ## 🔧 Giới thiệu
 
 Script này giúp bạn **kiểm tra liên tục các giao dịch ngân hàng** thông qua API của bất cứ bên hỗ trợ nào có trả output theo định dạng
-
+```bash
+{
+  "status": true,
+  "success": "Thành công",
+  "data": [
+    {
+      "postingDate": "d/m/y h:m:s",
+      "transactionDate": "d/m/y h:m:s",
+      "accountNo": "number",
+      "creditAmount": "price",
+      "debitAmount": "number",
+      "currency": "VND",
+      "description": "CUSTOMER vndev CODE. TU: ACCOUNT HOLDER",
+      "addDescription": "vndev CODE ",
+      "availableBalance": "NUMBER",
+      "beneficiaryAccount": "",
+      "refNo": "CODE",
+      "benAccountName": "MONEY TAKER",
+      "bankName": "BANK NAME",
+      "benAccountNo": "number",
+      "dueDate": "",
+      "docId": "",
+      "transactionType": "TYPE",
+      "pos": "",
+      "tracingType": ""
+    }
+  ]
+```
 Khi phát hiện giao dịch hợp lệ (chứa nội dung chuyển khoản “VNDEV <CODE>” trong mô tả và số tiền khớp `expected.json`) > print **“Đã thanh toán”**.
 Mọi trường hợp khác (thiếu code, sai số tiền, lỗi API, v.v.) sẽ được **in debug** để dễ theo dõi.
 
